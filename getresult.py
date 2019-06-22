@@ -1,7 +1,7 @@
 import requests
 import json
-student_email = x
-student_pass = password
+#student_email = x
+#student_pass = password
 
 url_login = "http://agr.p.alexu.edu.eg/Results/Student/Account/CheckLogin"
 data_login = {
