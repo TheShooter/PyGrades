@@ -3,6 +3,7 @@ from flask import Flask, request
 from pymessenger.bot import Bot
 import random
 import sqlalchemy as db
+import re
 import requests
 
 app = Flask('pygrades')
