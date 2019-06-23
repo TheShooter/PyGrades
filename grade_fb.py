@@ -42,7 +42,7 @@ def retreive_data():
        create_tables()
        output = request.get_json()
 
-        for event in output['entry']:
+    for event in output['entry']:
 
           messaging = event['messaging']
 
