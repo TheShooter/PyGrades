@@ -22,23 +22,8 @@ connection = engine.connect()
 def retreive_data():
 
   if request.method == 'GET':
-
     token_sent = request.args.get("hub.verify_token")
     return verify_fb_token(token_sent)
-    """	else:
-    output = request.get_json()
-    for event in output['entry']:
-      messaging = event['messaging']
-      for mess in messaging:
-        if mess.get('message'):
-          sender_id_fb = mess['sender']['id']
-          if mess['message'].get('text'):
-            response_sent_text = get_message()
-            send_message(sender_id_fb, response_sent_text)
-          elif mess['message'].get('attachments'):
-            response_sent_nontext = get_message()
-            send_message(sender_id_fb, response_sent_nontext)
-    return "Message Sent" """
   else:
     #create_tables()
     output = request.get_json()
@@ -46,8 +31,7 @@ def retreive_data():
           messaging = event['messaging']
           for mess in messaging:  # access to each element in the list
              if mess.get('message'):  # each element is a dict, so if 'message' key exist, do
-                 # access to 'id' key in 'sender' key
-                 sender_id_fb = mess['sender']['id']
+                 sender_id_fb = mess['sender']['id']  # access to 'id' key in 'sender' key
                  print(sender_id_fb)
                  if mess['message'].get('text'):
                       regex = '^([\w\.\-])+\@((alexu)+\.)+((edu)+\.)+(eg)+$'
@@ -59,7 +43,7 @@ def retreive_data():
                           pass_storage = mess['message']['text']
                           print(email_storage)
                           print(pass_storage)
-                          add_student(sender_id_fb, email_storage, pass_storage)
+                          #add_student(sender_id_fb, email_storage, pass_storage)
                       response_sent_text = get_message()
                       send_message(sender_id_fb, response_sent_text)
                  elif mess['message']['attachments']:
