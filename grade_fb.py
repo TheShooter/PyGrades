@@ -10,8 +10,7 @@ ACCESS_TOKEN = 'EAAEYCy6sKrIBABaAncav5iTTIBfngP9NF4gHTlXyKdSZCKNZAkrF6ZBmtAuWyLe
 VERIFY_TOKEN = 'REHAMNOUR'
 bot = Bot(ACCESS_TOKEN)
 
-engine = db.create_engine(
-    'postgresql://postgres:HM50i5kPaX@127.0.0.1/pygrades')
+engine = db.create_engine('postgresql://postgres:HM50i5kPaX@127.0.0.1/pygrades')
 connection = engine.connect()
 
 # app.config['SQLALCHEMY_DATABSE_URL'] = 'postgresql://postgres:HM50i5kPaX@127.0.0.1/pygrades'
@@ -42,7 +41,6 @@ def retreive_data():
   else:
     create_tables()
     output = request.get_json()
-
     for event in output['entry']:
           messaging = event['messaging']
           for mess in messaging:  # access to each element in the list
@@ -50,20 +48,20 @@ def retreive_data():
                  # access to 'id' key in 'sender' key
                  sender_id_fb = mess['sender']['id']
                  print(sender_id_fb)
-                if mess['message'].get('text'):
+                 if mess['message'].get('text'):
                       regex = '^([\w\.\-])+\@((alexu)+\.)+((edu)+\.)+(eg)+$'
                       regex_pass = '([A-Z]){1}([a-z]){2}([0-9]{4})'
                       temp_storage = mess['message']['text']
-                     if re.match(regex, temp_storage):
-                        email_storage = mess['message']['text']
-                     elif re.match(regex_pass, temp_storage):
-                        pass_storage = mess['message']['text']
-                        print(email_storage)
-                        print(pass_storage)
-                        add_student(sender_id_fb, email_storage, pass_storage)
-                    response_sent_text = get_message()
-                    send_message(sender_id_fb, response_sent_text)
-                elif mess['message']['attachments']:
+                      if re.match(regex, temp_storage):
+                          email_storage = mess['message']['text']
+                      elif re.match(regex_pass, temp_storage):
+                          pass_storage = mess['message']['text']
+                          print(email_storage)
+                          print(pass_storage)
+                          add_student(sender_id_fb, email_storage, pass_storage)
+                      response_sent_text = get_message()
+                      send_message(sender_id_fb, response_sent_text)
+                 elif mess['message']['attachments']:
                     response_sent_nontext = get_message()
                     send_message(sender_id_fb, response_sent_nontext)
                  return "Message Sent"
@@ -123,12 +121,12 @@ def create_tables():
 def add_student(id_fb_student, email_student, password_student):
    print(email_student)
    print(password_student)
-    insert_student = db.insert(Students).values(id=id_fb_student,
-    Email=email_student,
-    Password=password_student,
-  )
-    execute_insert = connection.execute(insert_student)
-    return "New student inserted!"
+   insert_student = db.insert(Students).values(id=id_fb_student,
+   Email=email_student,
+   Password=password_student,
+   )
+   execute_insert = connection.execute(insert_student)
+   return "New student inserted!"
 
 
 
