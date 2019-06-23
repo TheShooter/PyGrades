@@ -20,9 +20,11 @@ connection = engine.connect()
 @app.route('/api', methods=['GET', 'POST'])
 def retreive_data():
 
+    #create_tables()
+
   if request.method == 'GET':
 
-    token_sent = request.args.get("hub.verify_token")
+        token_sent = request.args.get("hub.verify_token")
     return verify_fb_token(token_sent)
     """	else:
     output = request.get_json()
@@ -39,7 +41,6 @@ def retreive_data():
             send_message(sender_id_fb, response_sent_nontext)
     return "Message Sent" """
   else:
-    create_tables()
     output = request.get_json()
     for event in output['entry']:
           messaging = event['messaging']
