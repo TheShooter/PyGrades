@@ -36,7 +36,7 @@ def retreive_data():
 					elif mess['message'].get('attachments'):
 						response_sent_nontext = get_message()
 						send_message(sender_id_fb, response_sent_nontext)
-	return "Message Sent" """
+	  return "Message Sent" """
   else:
        output = request.get_json()
         for event in output['entry']:
@@ -87,10 +87,23 @@ def create_tables():
     db.Column('Email', db.String(64),
     db.Column('Password', db.String(50),
     db.Column('Session_ID', db.INT),
-    db.Column('SubjectID', db.INT),
+    db.Column('SubjectID1', db.INT),
+    db.Column('SubjectID2', db.INT),
+    db.Column('SubjectID3', db.INT),
+    db.Column('SubjectID4', db.INT),
+    db.Column('SubjectID5', db.INT),
+    db.Column('SubjectID6', db.INT),
+    db.Column('SubjectID6', db.INT),
+    db.Column('SubjectID7', db.INT),
+    db.Column('Extension', db.String(50),
+    db.Column('Dairy', db.String(50),
+    db.Column('Vegetables', db.String(50),
+    db.Column('Password', db.String(50),
+    db.Column('Password', db.String(50),
+    db.Column('Password', db.String(50),
+    db.Column('Password', db.String(50),
+
     db.Column('JSON_ID', db.INT),
-    db.Column('Subject_Name', db.String(convert_unicode=True),
-    db.Column('DegreeSymbol', db.String(5),
     db.Column('Last_update', db.DATETIME)
     )
     metadata.create_all(engine)

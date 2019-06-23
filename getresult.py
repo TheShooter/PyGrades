@@ -46,13 +46,47 @@ fetch_data = resp.json()
 
 first_dig = fetch_data.get('data')
 
+
 for every_subject in first_dig:
-	esm_elmada = every_subject.get('SubjectName')
-	rkm_subject = every_subject.get('SubjectID')
-	data_id = every_subject.get('ID')
-	dragrak = every_subject.get('DegreeSymbol')
-	do_survey= every_subject.get('HasAnsweredSurvey')
-	add_db = students.insert().values(SubjectName=esm_elmada, SubjectID=rkm_subject, ID=data_id, DegreeSymbol=dragark, HasAnsweredSurvey=do_survey)
-	# that's for one subject what about 7?????
-	conn = engine.connect()
-	result = conn.execute(add_db)
+        esm_elmada = every_subject.get('SubjectName')
+        rkm_subject = every_subject.get('SubjectID')
+        data_id = every_subject.get('ID')
+        dragrak = every_subject.get('DegreeSymbol')
+        do_survey= every_subject.get('HasAnsweredSurvey')
+
+        if rkm_subject == 7880:
+            add_db = students.insert().values(Extension=dragark, SubjectID1=rkm_subject, ID_One=data_id)
+            conn = engine.connect()
+            result = conn.execute(add_db)
+
+        elif rkm_subject == 7881:
+            add_db = students.insert().values(Dairy=dragark, SubjectID2=rkm_subject, ID_two=data_id)
+            conn = engine.connect()
+            result = conn.execute(add_db)
+
+        elif rkm_subject == 7882:
+            add_db = students.insert().values(Vegetables=dragark, SubjectID3=rkm_subject, ID_three=data_id)
+            conn = engine.connect()
+            result = conn.execute(add_db)
+
+        elif rkm_subject == 313:
+            add_db = students.insert().values(Floriculture=dragark, SubjectID4=rkm_subject, ID_four=data_id)
+            conn = engine.connect()
+            result = conn.execute(add_db)
+
+        elif rkm_subject == 7883:
+            add_db = students.insert().values(FoodScience=dragark, SubjectID5=rkm_subject, ID_five=data_id)
+            conn = engine.connect()
+            result = conn.execute(add_db)
+
+        elif rkm_subject == 7884:
+            add_db = students.insert().values(Pomology=dragark, SubjectID6=rkm_subject, ID_six=data_id)
+            conn = engine.connect()
+            result = conn.execute(add_db)
+
+        elif rkm_subject == 7885:
+            add_db = students.insert().values(Computer=dragark, SubjectID7=rkm_subject, ID_seven=data_id,)
+            conn = engine.connect()
+            result = conn.execute(add_db)
+
+
