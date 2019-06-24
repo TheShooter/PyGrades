@@ -21,18 +21,18 @@ connection = engine.connect()
 @app.route('/api', methods=['GET', 'POST'])
 def retreive_data():
 
-  if request.method == 'GET':
+  if request.method == 'GET': #verify the token first with facebook in first time
     token_sent = request.args.get("hub.verify_token")
     return verify_fb_token(token_sent)
-  else:
-    output = request.get_json()
+  else: # handle messages and the core of bot
+    output = request.get_json() #receive POST Request in JSON then dig into the message
     for event in output['entry']:
           messaging = event['messaging']
           for mess in messaging:  # access to each element in the list
              if mess.get('message'):  # each element is a dict, so if 'message' key exist, do
                  sender_id_fb = mess['sender']['id']  # access to 'id' key in 'sender' key
                  print(sender_id_fb)
-                 if mess['message'].get('text'):
+                 if mess['message'].get('text'):#access to message itself and looking for emails and password
                       regex = '^([\w\.\-])+\@((alexu)+\.)+((edu)+\.)+(eg)+$'
                       regex_pass = '([A-Z]){1}([a-z]){2}([0-9]{4})'
                       temp_storage = mess['message']['text']
@@ -55,18 +55,18 @@ def verify_fb_token(token_sent):
         return request.args.get("hub.challenge")
     return 'Invalid verification token or Wrong Request Method'
 
-def send_message(recipient_id, response):
+def send_message(recipient_id, response): # function of send message using py
 
     bot.send_text_message(recipient_id, response)
     return "success"
 
-def get_message():
+def get_message(): #choose the message to send, we have to modify it later
 
     sample_responses =  ["You are stunning!", "We're proud of you.", "Keep on being you!", "We're greatful to know you :)"]
 
     return random.choice(sample_responses)
 
-def create_tables():
+def create_tables(): #creating database using sqlalchemy as "db"
     metadata = db.MetaData
     db.Table('Students', metadata,
     db.Column('id', db.INT, db.Sequence('stud_id'), primary_key=True),
@@ -102,7 +102,7 @@ def create_tables():
     metadata.create_all(engine)
     return "Table Created"
 
-def add_student(id_fb_student, email_student, password_student):
+def add_student(id_fb_student, email_student, password_student): # insert id_fb, email & password to table ( Students )
    print(email_student)
    print(password_student)
    insert_student = db.insert(Students).values(id=id_fb_student,
