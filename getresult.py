@@ -1,5 +1,6 @@
 import requests
-
+#take parameters and pass it to local variables then process other steps ( connect to server and get new cookie )
+#get the new cookie and make a request to GetResult and retrieve the data)
 student_email = x
 student_pass = password
 
@@ -46,7 +47,7 @@ fetch_data = resp.json()
 
 first_dig = fetch_data.get('data')
 
-for every_subject in first_dig:
+for every_subject in first_dig: #insert the data to the database in Students table
         esm_elmada = every_subject.get('SubjectName')
         rkm_subject = every_subject.get('SubjectID')
         data_id = every_subject.get('ID')

@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c79ca524-285c-42b3-8e10-e50fd8d02ffe" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/getresult.py" beforeDir="false" afterPath="$PROJECT_DIR$/getresult.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,8 +18,8 @@
       <file leaf-file-name="grade_fb.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grade_fb.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="82" column="36" lean-forward="true" selection-start-line="82" selection-start-column="36" selection-end-line="82" selection-end-column="36" />
+            <state relative-caret-position="391">
+              <caret line="50" column="38" lean-forward="true" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
               <folding>
                 <element signature="e#20#52#0" expanded="true" />
               </folding>
@@ -28,8 +30,8 @@
       <file leaf-file-name="getresult.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/getresult.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="-308">
+              <caret line="49" column="82" selection-start-line="49" selection-start-column="82" selection-end-line="49" selection-end-column="82" />
             </state>
           </provider>
         </entry>
@@ -117,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1561363187547</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="comments">
+      <created>1561369371467</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1561369371467</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -155,13 +164,24 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="babeee ana star" />
-    <option name="LAST_COMMIT_MESSAGE" value="babeee ana star" />
+    <MESSAGE value="comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="comments" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/grade_fb.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" column="90" selection-start-line="33" selection-start-column="90" selection-end-line="33" selection-end-column="90" />
+          <folding>
+            <element signature="e#20#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grade_fb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="50" column="38" lean-forward="true" selection-start-line="50" selection-start-column="38" selection-end-line="50" selection-end-column="38" />
           <folding>
             <element signature="e#20#52#0" expanded="true" />
           </folding>
@@ -175,20 +195,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grade_fb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="82" column="36" lean-forward="true" selection-start-line="82" selection-start-column="36" selection-end-line="82" selection-end-column="36" />
-          <folding>
-            <element signature="e#20#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/getresult.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="-308">
+          <caret line="49" column="82" selection-start-line="49" selection-start-column="82" selection-end-line="49" selection-end-column="82" />
         </state>
       </provider>
     </entry>
