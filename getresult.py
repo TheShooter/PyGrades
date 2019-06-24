@@ -1,12 +1,12 @@
 import requests
-import json
-#student_email = x
-#student_pass = password
+
+student_email = x
+student_pass = password
 
 url_login = "http://agr.p.alexu.edu.eg/Results/Student/Account/CheckLogin"
 data_login = {
-    "Email": "abdelrhman.hosany017@alexu.edu.eg",
-    "Password": "Puk20664",
+    "Email": student_email,
+    "Password": student_pass,
     "X-Requested-With": "XMLHttpRequest"
 }
 headers_login = {
@@ -23,9 +23,9 @@ headers_login = {
     "X-Requested-With": "XMLHttpRequest"
 }
 
-r_login = requests.post(url_login, data=data_login, headers=headers_login)
+response_login = requests.post(url_login, data=data_login, headers=headers_login)
 
-login_cookie =  'ASP.NET_SessionId=' + r_login.cookies['ASP.NET_SessionId']
+login_cookie =  'ASP.NET_SessionId=' + response_login.cookies['ASP.NET_SessionId']
 
 
 url = "http://agr.p.alexu.edu.eg/Results/Student/Result/GetResults"
@@ -45,7 +45,6 @@ resp = requests.get(url, headers=headers)
 fetch_data = resp.json()
 
 first_dig = fetch_data.get('data')
-
 
 for every_subject in first_dig:
         esm_elmada = every_subject.get('SubjectName')

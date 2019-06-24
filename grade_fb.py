@@ -25,7 +25,6 @@ def retreive_data():
     token_sent = request.args.get("hub.verify_token")
     return verify_fb_token(token_sent)
   else:
-    #create_tables()
     output = request.get_json()
     for event in output['entry']:
           messaging = event['messaging']
@@ -54,7 +53,7 @@ def retreive_data():
 def verify_fb_token(token_sent):
     if token_sent == VERIFY_TOKEN:
         return request.args.get("hub.challenge")
-    return 'Ivalid verification token or Wrong Request Method'
+    return 'Invalid verification token or Wrong Request Method'
 
 def send_message(recipient_id, response):
 
