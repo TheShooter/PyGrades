@@ -8,7 +8,7 @@ import requests
 
 app = Flask('pygrades')
 ACCESS_TOKEN = 'EAAEYCy6sKrIBABaAncav5iTTIBfngP9NF4gHTlXyKdSZCKNZAkrF6ZBmtAuWyLe5hKoTXjcOCJT3MOBtTka22Hw289cp9zGQ9VVs1Qart074bCIa74mXTOutZCF5zMDHCUMjHdJhxLme981fZACiQEtLnHVC9qc0uZCOZCklwYe0QZDZD'
-VERIFY_TOKEN = 'REHAMNOUR'
+VERIFY_TOKEN = 'KAREEMNOUR'
 bot = Bot(ACCESS_TOKEN)
 
 engine = db.create_engine('postgresql://postgres:HM50i5kPaX@127.0.0.1/pygrades')
