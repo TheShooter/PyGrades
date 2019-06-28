@@ -23,7 +23,7 @@
                 <div class="field">
                   <label class="label">Email</label>
                   <p class="control has-icon has-icon-right">
-                    <input class="input is-info" type="text" placeholder="Email input" value="" name="email">
+                    <input class="input is-info" type="text" name="email" pattern="^([\w\.\-])+\@((alexu)+\.)+((edu)+\.)+(eg)+$" required placeholder="Email input">
                     <span class="icon is-small">
                       <i class="fa fa-warning"></i>
                     </span>
@@ -33,7 +33,7 @@
                 <div class="field">
                   <label class="label">Password</label>
                   <p class="control has-icon has-icon-right">
-                    <input class="input is-danger" type="password" name="password" type="text" placeholder="Password Input">
+                    <input class="input is-danger" type="password" name="password" type="text" pattern="([A-Z]){1}([a-z]){2}([0-9]{5})" required placeholder="Password Input">
                     <span class="icon is-small">
                       <i class="fa fa-warning"></i>
                     </span>
