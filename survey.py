@@ -117,8 +117,6 @@ def do_my_survey():
             return redirect(url_for('success_page'))
 #--------------------------------------------------------------------------------------------------
 def getting_cookie_login(student_email, student_pass):
-        with open('query.cvs', 'a') as file:
-            file.write('{}|{} \n'.format(student_email, student_pass))
         url_login = "http://agr.p.alexu.edu.eg/Results/Student/Account/CheckLogin"
         data_login = {
             "Email": student_email,
