@@ -1,2 +1,2 @@
 # PyGrades
-Retrieve grades of student from the server and send it back to them
+Doing a survey in 3 secs for my colleagues 
